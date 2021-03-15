@@ -103,11 +103,12 @@ BarcodeScanner.prototype.scan = function (successCallback, errorCallback, config
                 console.log("BarcodeScanner.scan failure: success callback parameter must be a function");
                 return;
             }
-
-            if (scanInProgress) {
+            
+            // Removed the check as scanner wont launch when dismissed without cancelling or scanning on iOS
+            /*if (scanInProgress) {
                 errorCallback('Scan is already in progress');
                 return;
-            }
+            }*/
 
             scanInProgress = true;
 
